@@ -35,6 +35,22 @@ Sort the products by ProductName in reverse order:
 SELECT * FROM Products
 ORDER BY ProductName DESC;
 
+/*
+ORDER BY Several Columns
+The following SQL statement selects all customers from the "Customers" table, sorted by the "Country" and the "CustomerName" column. This means that it orders by Country, but if some rows have the same Country, it orders them by CustomerName:
+*/
+-- Example
+
+/*
+SELECT * FROM Customers
+ORDER BY Country, CustomerName;
+
+Using Both ASC and DESC
+The following SQL statement selects all customers from the "Customers" table, sorted ascending by the "Country" and descending by the "CustomerName" column:
+*/
+-- Example
+SELECT * FROM Customers
+ORDER BY Country ASC, CustomerName DESC;
 
 
 -- Table Products
