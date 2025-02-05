@@ -17,3 +17,23 @@ WHERE manager_id IS NULL;
 SELECT employee_id, first_name, last_name, manager_id
 FROM employees
 WHERE manager_id IS NOT NULL;
+
+
+
+/*SQL NULL Functions
+SQL IFNULL(), ISNULL(), COALESCE(), and NVL() Functions
+
+Look at the following SELECT statement:
+*/
+SELECT ProductName, UnitPrice * (UnitsInStock + UnitsOnOrder)
+FROM Products;
+--In the example above, if any of the "UnitsOnOrder" values are NULL, the result will be NULL.
+
+--Solution SQL Server
+--The SQL Server ISNULL() function lets you return an alternative value when an expression is NULL:
+SELECT ProductName, UnitPrice * (UnitsInStock + ISNULL(UnitsOnOrder, 0))
+FROM Products;
+
+--or we can use the COALESCE() function, like this:
+SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0))
+FROM Products;
